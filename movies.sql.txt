@@ -1,0 +1,74 @@
+mysql> create database Cinema;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cinema             |
+| cinemas            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+8 rows in set (0.03 sec)
+mysql> use cinema
+Database changed
+mysql> create table FavMovies(Name VARCHAR(30),Actor VARCHAR(30),Actress VARCHAR(30),Director VARCHAR(30),Year_of_release INT NOT NULL,PRIMARY KEY(Name));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> INSERT INTO FavMovies VALUES('Home','Srinath Bhasi','Deepa Thomas','Rojin Thomas',2021);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO FavMovies VALUES('Lucifer','Mohanlal','Manju Warrier','Prithviraj',2019);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO FavMovies VALUES('Kumblengi Nights','Shane Nigam','Anna Ben','Madhu C Narayanan',2019);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO FavMovies VALUES('Banglore Days','Dulquer Salman','Parvathy','Anjali Menon',2015);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO FavMovies VALUES('Dil Dhadkne Dho','Ranveer Singh','Anushka Sharma','Zoya Akthar',2015);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO FavMovies VALUES('Teddy','Arya','Sayyesha','Shakti Soundar Rajan',2021);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO FavMovies VALUES('June','Sunny Wayne','Rajisha Vijayan','Ahammed Khabeer',2019);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO FavMovies VALUES('Thappad','Pavail Gulati','Tapsee Pannu','Anubhav Sinha',2020);
+Query OK, 1 row affected (0.03 sec)
+mysql> SELECT * FROM FavMovies;
++------------------+----------------+-----------------+----------------------+-----------------+
+| Name             | Actor          | Actress         | Director             | Year_of_release |
++------------------+----------------+-----------------+----------------------+-----------------+
+| Banglore Days    | Dulquer Salman | Parvathy        | Anjali Menon         |            2015 |
+| Dil Dhadkne Dho  | Ranveer Singh  | Anushka Sharma  | Zoya Akthar          |            2015 |
+| Home             | Srinath Bhasi  | Deepa Thomas    | Rojin Thomas         |            2021 |
+| June             | Sunny Wayne    | Rajisha Vijayan | Ahammed Khabeer      |            2019 |
+| Kumblengi Nights | Shane Nigam    | Anna Ben        | Madhu C Narayanan    |            2019 |
+| Lucifer          | Mohanlal       | Manju Warrier   | Prithviraj           |            2019 |
+| Teddy            | Arya           | Sayyesha        | Shakti Soundar Rajan |            2021 |
+| Thappad          | Pavail Gulati  | Tapsee Pannu    | Anubhav Sinha        |            2020 |
++------------------+----------------+-----------------+----------------------+-----------------+
+8 rows in set (0.02 sec)
+8 rows in set (0.02 sec)
+mysql> SELECT Name,Actor FROM FavMovies ORDER BY Actor;
++------------------+----------------+
+| Name             | Actor          |
++------------------+----------------+
+| Teddy            | Arya           |
+| Banglore Days    | Dulquer Salman |
+| Lucifer          | Mohanlal       |
+| Thappad          | Pavail Gulati  |
+| Dil Dhadkne Dho  | Ranveer Singh  |
+| Kumblengi Nights | Shane Nigam    |
+| Home             | Srinath Bhasi  |
+| June             | Sunny Wayne    |
++------------------+----------------+
+8 rows in set (0.00 sec)
